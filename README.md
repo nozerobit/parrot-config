@@ -17,7 +17,7 @@ This is the outcome of my dotfiles configuration.
 
 I recommend having 4 GB of RAM or more because alacritty takes quite an amount of memory when compiling/building it. I installed this from the home folder at `/home/kali/kali-config` location.
 
-![power manager](media/power-manager.png)
+![image](https://user-images.githubusercontent.com/83516002/125367032-e7334b80-e366-11eb-8935-fbd634bb0b84.png)
 
 Make sure to disable sleep because the script can take a while to finish doing it's stuff. This is **optional** but recommended.
 
@@ -36,6 +36,10 @@ cd ~ && git clone https://github.com/wixnic/kali-config.git && cd kali-config
 ```
 
 The installation can take a while because it downloads a lot of things, especially because of the nerd-fonts. The time that it takes to finish will depend mostly on your internet download bandwidth provided by your ISP.
+
+![slim](media/slim.png)
+
+Choose slim as the default login manager.
 
 ![nodejs](media/nodejs-prompt.png)
 
@@ -77,10 +81,10 @@ If you which to change some settings, here are the locations of the configuratio
 ~/.config/sxhkd/sxhkdrc
 ```
 
-`compton` Transparency Configuration
+`picom` Transparency Configuration
 
 ```shell
-~/.config/compton/compton.conf
+~/.config/picom/picom.conf
 ```
 
 `nvim` Terminal Text Editor Configuration
@@ -167,9 +171,9 @@ Change the icon to `Papirus-Dark`.
 
 Open the `Thunar File Manager` which you can launch with `rofi`, the shortcut for rofi is `Windows + D`, once you are in Thunar, navigate to the Pictures directory. Right click on a picture, a nice comfortable image viewer is  `ristretto`, which I recommend using.
 
-# Compton Configuration
+# Picom Configuration
 
-If you want to add transparency to an application you should use the `xprop WM_CLASS` command and select the windows/application that you want to apply transparency on, once you click with the cursor on that application you will get the output of the name, copy that name and added it to your `~/.config/compton/comtpon.conf` file.
+If you want to add transparency to an application you should use the `xprop WM_CLASS` command and select the windows/application that you want to apply transparency on, once you click with the cursor on that application you will get the output of the name, copy that name and added it to your `~/.config/picom/picom.conf` file.
 
 Example:
 
