@@ -24,7 +24,7 @@ Make sure to disable sleep because the script can take a while to finish doing i
 1. Clone this repo and change the directory
 
 ```bash
-cd ~ && git clone https://github.com/wixnic/kali-config.git && cd kali-config
+cd ~ && git clone https://github.com/wixnic/parrot-config.git && cd parrot-config
 ```
 
 > IMPORTANT: cd ~ (clone this in the home folder, otherwise modify the script and change some directories in the script)
