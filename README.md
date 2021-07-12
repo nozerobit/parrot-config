@@ -1,9 +1,9 @@
 # Introduction
 
-This is my Kali Linux configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
+This is my ParrotOS configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
 
 Tested in:
-`kali-linux-2021.2-vmware-amd64` with **4 GB** of RAM.
+`ParrotOS 4.11 MATE` with **4 GB** of RAM.
 
 # Overview
 
@@ -298,8 +298,8 @@ Configurations:
 - https://github.com/baskerville/bspwm
 - https://github.com/baskerville/sxhkd
 - https://github.com/jwilm/alacritty 
-- https://github.com/chjj/compton
-- https://github.com/adi1090x/polybar-themes
+- https://github.com/ibhagwan/picom.git
+- https://github.com/VaughnValle/blue-sky.git
 - https://github.com/davatorium/rofi
 - https://github.com/ohmyzsh/ohmyzsh
 - https://github.com/gpakosz/.tmux.git
