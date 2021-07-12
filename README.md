@@ -15,11 +15,11 @@ This is the outcome of my dotfiles configuration.
 
 # Installation
 
-I recommend having 4 GB of RAM or more because alacritty takes quite an amount of memory when compiling/building it. I installed this from the home folder at `/home/kali/kali-config` location.
+I recommend having 4 GB of RAM or more because alacritty takes quite an amount of memory when compiling/building it. I installed this from the home folder at `~/parrot-config` location.
 
 ![image](https://user-images.githubusercontent.com/83516002/125367032-e7334b80-e366-11eb-8935-fbd634bb0b84.png)
 
-Make sure to disable sleep because the script can take a while to finish doing it's stuff. This is **optional** but recommended.
+This is **optional** but recommended.
 
 1. Clone this repo and change the directory
 
