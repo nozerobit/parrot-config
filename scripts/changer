@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# Change Wallpapers and add a Pywal effect
+WAL=$(ls ~/Pictures/*.* | shuf -n 1)
+bash ~/.config/polybar/scripts/pywal.sh $WAL
+# Don't kill picom, don't worry mate, it won't spawn another process. If you remove this you will have problems with picom.
+picom &
+
+
