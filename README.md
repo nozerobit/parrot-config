@@ -76,6 +76,22 @@ Wait for powerlevel10K, this is done very quickly.
 
 To fix this error just do Windows + Alt + W. This will execute the `changer` script which changes your environment.
 
+# Possible Alacritty Error - This may not apply to everyone
+
+If you press Windows + Enter and nothing is happening, then most likeyly Alacritty failed to compile but you can fix it easily by doing this:
+
+![image](https://user-images.githubusercontent.com/83516002/125389659-18c10c80-e391-11eb-8f07-4167838aa91f.png)
+
+Open the gnome-terminal with rofi using Windows + D and search for `gnome-terminal`, press the Enter key and type this in the terminal:
+
+```
+cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
+```
+
+If it fails then you can try increasing the RAM or creating swap partition.
+
+More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+
 # Next Steps
 
 If you want to know how it works or if you want to configure the settings to your own liking, continue reading the next sections.
