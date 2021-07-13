@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 #$HOME/.config/polybar/launch.sh --colorblocks
 ~/.config/polybar/launch.sh
-bash ~/.config/polybar/colorblocks/scripts/pywal.sh ~/Pictures/mx-shimmer-red-eyes-anime-girl-x0.jpg &
+bash ~/.config/polybar/scripts/pywal.sh ~/Pictures/mx-shimmer-red-eyes-anime-girl-x0.jpg &
 feh --bg-fill $HOME/Pictures/mx-shimmer-red-eyes-anime-girl-x0.jpg
 picom --experimental-backends &
 vmware-user  &
