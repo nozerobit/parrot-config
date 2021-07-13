@@ -7,7 +7,7 @@ THIS IS NOT COMPLETE YET!
 This is my ParrotOS configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
 
 Tested in:
-`ParrotOS 4.11.2 MATE Security Edition` with **4 GB** of RAM.
+`ParrotOS 4.11.2 MATE Security Edition` with **4 GB** of RAM and **40 GB** of Disk Space.
 
 # Overview
 
