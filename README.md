@@ -9,6 +9,9 @@ This is my ParrotOS configuration. I have decided to publish it for everyone out
 Tested in:
 `ParrotOS 4.11.2 MATE Security Edition` with **4 GB** of RAM and **40 GB** of Disk Space.
 
+ISO Name:
+Parrot-security-4.11.2_amd64.iso
+
 # Overview
 
 ![changer](media/changer.gif)
