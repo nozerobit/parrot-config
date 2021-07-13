@@ -79,7 +79,7 @@ To fix this error just do Windows + Alt + W. This will execute the `changer` scr
 After generating wal cache files, copy them to the root directory for the `root` user.
 
 ```
-sudo cp -r /home/kali/.cache/wal /root/.cache/
+sudo cp -r /home/wixnic/.cache/wal /root/.cache/
 ```
 
 # Possible Alacritty Error - This may not apply to everyone
