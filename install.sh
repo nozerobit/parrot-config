@@ -18,7 +18,7 @@ sudo apt update && sudo parrot-upgrade -y
 sudo apt install open-vm-tools-desktop -y
 
 # Tools
-sudo apt install -y wmname manpages-dev cargo arandr scrub flameshot arc-theme tmux fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd rbenv htop lxappearance python3-pip rofi unclutter papirus-icon-theme imagemagick neovim ranger watchman joplin
+sudo apt install -y wmname manpages-dev cargo arandr scrub flameshot arc-theme tmux fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd rbenv htop lxappearance python3-pip rofi polybar unclutter papirus-icon-theme imagemagick neovim ranger watchman joplin
 
 # Dependencies
 sudo apt install -y build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
