@@ -74,6 +74,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 #echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 cp .p10k.zsh ~/
 cp .zshrc ~/
+# Add Powerlevel10K Root Shell
+sudo cp -r powerlevel10k/ /root
 sudo cp .p10k.zsh /root
 
 # Tmux Configuration
@@ -153,6 +155,11 @@ sudo cp -r ~/.config /root
 
 # Zsh Symlink with root
 sudo ln -s -f ~/.zshrc /root/.zshrc
+
+# Add Pywal to Root Shell
+wal &>/dev/null
+sudo cp -r ~/.cache/wal /root/.cache/
+killall wal
 
 # Change Shell
 sudo usermod --shell /usr/bin/zsh $USER
