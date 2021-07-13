@@ -78,7 +78,7 @@ To fix this error just do Windows + Alt + W. This will execute the `changer` scr
 
 # Possible Alacritty Error - This may not apply to everyone
 
-If you press Windows + Enter and nothing is happening, then most likeyly Alacritty failed to compile but you can fix it easily by doing this:
+If you press Windows + Enter and nothing is happening, then most likely Alacritty failed to compile but you can fix it easily by doing this:
 
 ![image](https://user-images.githubusercontent.com/83516002/125389659-18c10c80-e391-11eb-8f07-4167838aa91f.png)
 
@@ -88,7 +88,26 @@ Open the gnome-terminal with rofi using Windows + D and search for `gnome-termin
 cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
 ```
 
-If it fails then you can try increasing the RAM or creating swap partition.
+If it fails then you can try increasing the RAM or creating swap partition as follows:
+
+
+Create the swap space
+```
+dd if=/dev/zero of=/mnt/swapfile bs=4096 count=2097152
+```
+Assign the right permissions.
+```
+chmod 600 /mnt/swapfile
+```
+After defining our partition, we need to format it for "swap mode" so run mkswap command on the newly created swap partition. Make sure to choose the correct partition number which you need to enable swap.
+```
+mkswap /mnt/swapfile
+```
+Enable swap 
+```
+swapon /mnt/swapfile
+```
+Now try to compile alacritty again.
 
 More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 
