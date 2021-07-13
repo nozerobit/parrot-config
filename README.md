@@ -45,7 +45,7 @@ The installation can take a while because it downloads a lot of things, especial
 
 Choose slim as the default login manager.
 
-![nodejs](media/nodejs-prompt.png)
+![image](https://user-images.githubusercontent.com/83516002/125377441-81ea5500-e37c-11eb-88ab-ff1919ec9aa1.png)
 
 When prompted here type `y` for yes. This will install node.js which is needed for the coc plugin in neovim.
 
