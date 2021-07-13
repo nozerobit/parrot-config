@@ -44,7 +44,11 @@ cd ~ && git clone https://github.com/wixnic/parrot-config.git && cd parrot-confi
 
 The installation can take a while because it downloads a lot of things, especially because of the nerd-fonts. The time that it takes to finish will depend mostly on your internet download bandwidth provided by your ISP.
 
+![image](https://user-images.githubusercontent.com/83516002/125388435-004ff280-e38f-11eb-92a9-4d7c0fe9bf01.png)
+
 ![image](https://user-images.githubusercontent.com/83516002/125376924-89f5c500-e37b-11eb-878b-894d2c79b80f.png)
+
+![image](https://user-images.githubusercontent.com/83516002/125388480-13fb5900-e38f-11eb-98d5-1ecc5b0e645f.png)
 
 Choose slim as the default login manager.
 
