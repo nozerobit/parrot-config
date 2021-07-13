@@ -68,6 +68,10 @@ Once you have rebooted the machine, enter your credentials and then login.
 
 4. Open zsh with Windows + Enter
 
+![image](https://user-images.githubusercontent.com/83516002/125389017-10b49d00-e390-11eb-9365-66a040522cac.png)
+
+Wait for powerlevel10K, this is done very quickly.
+
 ![image](https://user-images.githubusercontent.com/83516002/125377681-f1604480-e37c-11eb-90a2-04cb418a9c7a.png)
 
 To fix this error just do Windows + Alt + W. This will execute the `changer` script which changes your environment.
