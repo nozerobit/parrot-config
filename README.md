@@ -72,6 +72,10 @@ To fix this error just do Windows + Alt + W. This will execute the `changer` scr
 
 If you want to know how it works or if you want to configure the settings to your own liking, continue reading the next sections.
 
+## Full Screen Fix
+
+User Windows + Alt + R to fix the polybar when changing screen resolution.
+
 ## Configuration Files Locations After Installation
 
 If you which to change some settings, here are the locations of the configuration files.
