@@ -31,20 +31,20 @@ sudo apt install -y python3-dev libssl-dev libffi-dev build-essential
 git clone https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 ./install.sh
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # Alacritty 
 git clone https://github.com/jwilm/alacritty
 cd alacritty
 cargo build --release && sudo cp target/release/alacritty /usr/local/bin
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # bspwm and sxhkd
 git clone https://github.com/baskerville/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
 cd bspwm && make && sudo make install
 cd ../sxhkd && make && sudo make install
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # Picom
 git clone https://github.com/ibhagwan/picom.git
@@ -53,7 +53,7 @@ git submodule update --init --recursive
 meson --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # Blue Sky Polybar Theme
 git clone https://github.com/VaughnValle/blue-sky.git
@@ -64,7 +64,7 @@ cp * -r ~/.config/polybar
 cd fonts
 sudo cp * /usr/share/fonts/truetype/
 fc-cache -v
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # Display Configuration
 cp .xinitrc ~/.xinitrc
@@ -81,7 +81,7 @@ cd ~
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
-cd ~/parrot-dotfiles
+cd ~/parrot-config
 
 # Slim and Slimlock
 sudo apt update && sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
@@ -134,17 +134,17 @@ wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
 # Copy the Wallpapers to ~/Pictures
-cp ~/parrot-dotfiles/wallpapers/* ~/Pictures
+cp ~/parrot-config/wallpapers/* ~/Pictures
 
 # Copy the Configuration Files
-cp -r ~/parrot-dotfiles/.config ~/
+cp -r ~/parrot-config/.config ~/
 
 # Execute Permissions
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/bspwm/bspwm_resize
 chmod +x ~/.config/scripts/*.sh
 chmod -R 755 ~/.config/polybar
-sudo cp ~/parrot-dotfiles/scripts/changer /usr/local/bin/changer
+sudo cp ~/parrot-config/scripts/changer /usr/local/bin/changer
 sudo chown $USER:$USER /usr/local/bin/changer
 sudo chmod +x /usr/local/bin/changer
 
