@@ -75,7 +75,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 cp .p10k.zsh ~/
 cp .zshrc ~/
 # Add Powerlevel10K Root Shell
-sudo cp -r powerlevel10k/ /root
+sudo cp -r ~/powerlevel10k /root
 sudo cp .p10k.zsh /root
 
 # Tmux Configuration
