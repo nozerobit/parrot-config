@@ -84,7 +84,7 @@ cp .tmux/.tmux.conf.local .
 cd ~/parrot-config
 
 # Slim and Slimlock
-sudo apt update && sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
+sudo apt update && sudo apt -y install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 git clone https://github.com/joelburget/slimlock.git
 cd slimlock/
 sudo make
