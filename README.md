@@ -55,9 +55,15 @@ When prompted here type `y` for yes. This will install node.js which is needed f
 reboot
 ```
 
-![bspwm-login](media/bspwm-login.png)
+![image](https://user-images.githubusercontent.com/83516002/125377817-279dc400-e37d-11eb-9769-31cf3aaa5588.png)
 
-Once you have rebooted the machine, select bspwm as the window manager and then login.
+Once you have rebooted the machine, enter your credentials and then login.
+
+4. Open zsh with Windows + Enter
+
+![image](https://user-images.githubusercontent.com/83516002/125377681-f1604480-e37c-11eb-90a2-04cb418a9c7a.png)
+
+To fix this error just do Windows + Alt + W. This will execute the `changer` script which changes your environment.
 
 # Next Steps
 
