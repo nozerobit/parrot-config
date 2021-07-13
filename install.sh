@@ -157,9 +157,8 @@ sudo cp -r ~/.config /root
 sudo ln -s -f ~/.zshrc /root/.zshrc
 
 # Add Pywal to Root Shell
-wal &>/dev/null
+bash ~/.config/polybar/colorblocks/scripts/pywal.sh ~/Pictures/mx-shimmer-red-eyes-anime-girl-x0.jpg &
 sudo cp -r ~/.cache/wal /root/.cache/
-killall wal
 
 # Change Shell
 sudo usermod --shell /usr/bin/zsh $USER
