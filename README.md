@@ -14,11 +14,11 @@ Parrot-security-4.11.2_amd64.iso
 
 # Overview
 
-![changer](media/changer.gif)
+https://user-images.githubusercontent.com/83516002/125391826-a3efd180-e394-11eb-87ca-02253bc0cf6b.mp4
 
 This is the outcome of my dotfiles configuration. 
 
-> note: This is a highly compressed gif that's why the bitrate is so low.
+> note: This is a highly compressed video that's why the bitrate is so low.
 
 # Installation
 
