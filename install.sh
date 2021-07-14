@@ -17,6 +17,9 @@ sudo apt update && sudo parrot-upgrade -y
 # VMware Tools (Open Source Version)
 sudo apt install open-vm-tools-desktop -y
 
+# Network Tools
+sudo apt install network-manager -y
+
 # Tools
 sudo apt install -y wmname manpages-dev cargo arandr scrub flameshot arc-theme tmux fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd rbenv htop lxappearance python3-pip rofi polybar unclutter papirus-icon-theme imagemagick neovim ranger watchman joplin
 
