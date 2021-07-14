@@ -43,7 +43,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a GParted state=floating focus=on
 bspc rule -a Lxappearance state=floating focus=on
 bspc rule -a SimpleScreenRecorder state=floating focus=on
-bspc rule -a NetworkManager state=floating focus=on
+bspc rule -a Nm-connection-editor state=floating focus=on
 bspc rule -a Alacritty state=tiled focus=on
 bspc rule -a speedcrunch state=floating focus=on
 bspc rule -a Viewnior focus=on state=tiled
