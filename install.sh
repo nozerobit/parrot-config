@@ -172,6 +172,9 @@ sudo chown $USER:$USER /root
 sudo chown $USER:$USER /root/.cache -R
 sudo chown $USER:$USER /root/.local -R
 
+# Fix Nmap SLOW
+sudo apt purge opensnitch -y
+
 # Install nodejs
 curl -sL install-node.now.sh/lts | sudo zsh
 
