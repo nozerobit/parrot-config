@@ -76,10 +76,10 @@ Wait for powerlevel10K, this is done very quickly.
 
 To fix this error just do Windows + Alt + W. This will execute the `changer` script which changes your environment.
 
-After generating wal cache files, copy them to the root directory for the `root` user.
+After generating wal cache files, create a Symlink to the root directory for the `root` user this will share the cache.
 
 ```
-sudo cp -r /home/wixnic/.cache/wal /root/.cache/
+sudo ln -s /home/wixnic/.cache/wal /root/.cache/wal
 ```
 
 # Possible Alacritty Error - This may not apply to everyone
