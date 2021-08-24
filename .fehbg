@@ -1,0 +1,4 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill ~/Pictures/TW.png
+# wal
+bash ~/.config/polybar/colorblocks/scripts/pywal.sh ~/Pictures/TW.png &
