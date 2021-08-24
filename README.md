@@ -14,8 +14,6 @@ https://user-images.githubusercontent.com/83516002/125391826-a3efd180-e394-11eb-
 
 This is the outcome of my dotfiles configuration. 
 
-> note: This is a highly compressed video that's why the bitrate is so low.
-
 # Installation
 
 I recommend having 4 GB of RAM or more because alacritty takes quite an amount of memory when compiling/building it. I installed this from the home folder at `~/parrot-config` location.
