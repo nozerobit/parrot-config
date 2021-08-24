@@ -148,6 +148,14 @@ sudo apt-get install apt-transport-https -y
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update && sudo apt-get install sublime-text -y
 
+# xeventbind (Used for resolutions and reloading feh and wal)
+cd ~/parrot-config
+git clone https://github.com/ritave/xeventbind.git
+cd xeventbind
+make
+sudo cp xeventbind /usr/local/bin
+cd ..
+
 # Copy the Wallpapers to ~/Pictures
 cp ~/parrot-config/wallpapers/* ~/Pictures
 
