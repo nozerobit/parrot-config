@@ -21,7 +21,7 @@ sudo apt install open-vm-tools-desktop -y
 sudo apt install network-manager -y
 
 # Tools
-sudo apt install -y wmname manpages-dev cargo arandr scrub flameshot arc-theme tmux fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd rbenv htop lxappearance python3-pip rofi polybar unclutter papirus-icon-theme imagemagick neovim ranger watchman joplin
+sudo apt install -y wmname manpages-dev cargo arandr scrub flameshot arc-theme tmux fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd rbenv htop lxappearance python3-pip rofi polybar compton unclutter papirus-icon-theme imagemagick neovim ranger watchman joplin
 
 # Dependencies
 sudo apt install -y build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
@@ -31,10 +31,10 @@ sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-
 sudo apt install -y python3-dev libssl-dev libffi-dev build-essential
 
 # Iosevka Nerd Fonts
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-./install.sh
-cd ~/parrot-config
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
+unzip Iosevka.zip
+sudo mv *.ttf /usr/share/fonts
+rm *.zip
 
 # Alacritty 
 git clone https://github.com/jwilm/alacritty
@@ -88,6 +88,10 @@ ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 cd ~/parrot-config
 
+# Tmux Configuration for root
+sudo cp -r /home/$USER/.tmux /root
+sudo ln -s -f /home/$USER/.tmux/.tmux.conf /root/.tmux.conf
+
 # Slim and Slimlock
 sudo apt update && sudo apt -y install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 git clone https://github.com/joelburget/slimlock.git
@@ -137,6 +141,12 @@ sudo apt -y install powershell
 cd ~
 wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+
+# Install Sublime Text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https -y
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update && sudo apt-get install sublime-text -y
 
 # Copy the Wallpapers to ~/Pictures
 cp ~/parrot-config/wallpapers/* ~/Pictures
