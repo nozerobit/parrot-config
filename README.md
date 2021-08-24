@@ -111,10 +111,6 @@ Now try to compile alacritty again.
 
 More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 
-# Next Steps
-
-If you want to know how it works or if you want to configure the settings to your own liking, continue reading the next sections.
-
 ## Configuration Files Locations After Installation
 
 If you which to change some settings, here are the locations of the configuration files.
@@ -200,8 +196,6 @@ Windows + Ctrl + (⬆⬅⬇➡) : Change the position of the current window (onl
 Windows + Ctrl + Alt + (⬆⬅⬇➡) : Show a preselection and then open a window (a terminal, firefox, a file, etc.).
 
 Windows + Ctrl + Space: Undo the preselection.
-
-> Note that when we refer to the Windows key, it may change depending on the selected pointer \ _modifier, found in the file ~/.config/bspwm/bspwmrc
 
 ### Special sxhkd Shortcuts
 
