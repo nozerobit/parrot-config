@@ -1,19 +1,16 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# Greeting
-#echo "Welcome to Parrot OS"
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Prompt
-PROMPT="%F{red}┌[%f%F{cyan}%m%f%F{red}]─[%f%F{yellow}%D{%H:%M-%d/%m}%f%F{red}]─[%f%F{magenta}%d%f%F{red}]%f"$'\n'"%F{red}└╼%f%F{green}$USER%f%F{yellow}$%f"
+#PROMPT="%F{red}┌[%f%F{cyan}%m%f%F{red}]─[%f%F{yellow}%D{%H:%M-%d/%m}%f%F{red}]─[%f%F{magenta}%d%f%F{red}]%f"$'\n'"%F{red}└╼%f%F{green}$USER%f%F{yellow}$%f"
 # Export PATH$
 export PATH=~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
-### Fix slowness of pastes with zsh-syntax-highlighting.zsh
+# Fix slowness of pasting with zsh-syntax-highlighting.zsh
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
@@ -36,6 +33,8 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias cat='bat'
+alias catn='/usr/bin/cat'
 #####################################################
 # Auto completion / suggestion
 # Mixing zsh-autocomplete and zsh-autosuggestions
@@ -44,7 +43,7 @@ alias egrep='egrep --color=auto'
 # Requires: zsh-autosuggestions (packaging by Debian Team)
 # Jobs: Fish-like suggestion for command history
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Select all suggestion instead of top on result only
 zstyle ':autocomplete:tab:*' insert-unambiguous yes
 zstyle ':autocomplete:tab:*' widget-style menu-select
@@ -52,26 +51,49 @@ zstyle ':autocomplete:*' min-input 2
 bindkey $key[Up] up-line-or-history
 bindkey $key[Down] down-line-or-history
 
+# Use modern completion system
+autoload -Uz compinit
+compinit -i
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ##################################################
 # Fish like syntax highlighting
 # Requires "zsh-syntax-highlighting" from apt
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Save type history for completion and easier life
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt appendhistory
+
+# Share history between terminals
+setopt share_history
 
 # Useful alias for benchmarking programs
 # require install package "time" sudo apt install time
 # alias time="/usr/bin/time -f '\t%E real,\t%U user,\t%S sys,\t%K amem,\t%M mmem'"
 # Display last command interminal
-echo -en "\e]2;Parrot Terminal\a"
-preexec () { print -Pn "\e]0;$1 - Parrot Terminal\a" }
+#echo -en "\e]2;Parrot Terminal\a"
+#preexec () { print -Pn "\e]0;$1 - Parrot Terminal\a" }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -127,8 +149,8 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # Functions
-function mkt(){
-    mkdir {nmap,content,exploits,scripts}
+function mk(){
+    mkdir {scans,loot,exploits,scripts,report}
 }
 
 function drive(){
@@ -166,15 +188,14 @@ function kp() {
 }
 
 # Extract nmap information
-function xp4(){
+function xp(){
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)"
-    ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-    echo -e "[*] IP Address: $ip_address"  >> xp4.tmp
-    echo -e "[*] Open ports: $ports\n"  >> xp4.tmp
-    echo $ports | xclip -sel clip
-    echo -e "[*] Ports copied to clipboard\n"  >> xp4.tmp
-    cat xp4.tmp; rm xp4.tmp
+    echo -e "[+] Open ports: $ports"  >> xp.tmp
+    echo $ports | tr -d '\n' | xclip -sel clip
+    echo -e "[+] Ports copied to clipboard"  >> xp.tmp
+    cat xp.tmp; rm xp.tmp
 }
+
 
 # Set 'man' colors
 function man() {
@@ -203,6 +224,19 @@ function cleartarget(){
     echo '' > ~/.config/scripts/target
 }
 
+function PSCredential () {
+	echo -e "\n\t[+] \$user = 'user'"
+	echo -e "\t[+] \$pw = 'password'"
+	echo -e "\t[+] \$secpw = ConvertTo-SecureString \$pw -AsPlainText -Force"
+	echo -e "\t[+] \$cred = New-Object System.Management.Automation.PSCredential \$user, \$secpw"
+	echo -e "\t[+] Invoke-Command -ComputerName localhost -Credential \$cred -ScriptBlock { whoami }"
+}
+
+function PSCredentialOneLiner () {
+    echo -e "\$user='user';\$pw='password';\$secpw=ConvertTo-SecureString \$pw -AsPlainText -Force;\$cred=New-Object System.Management.Automation.PSCredential \$user, \$secpw;Invoke-Command -ComputerName localhost -Credential \$cred -ScriptBlock { whoami }"
+}
+
+
 # $PATH
 
 #export PATH=$PATH:/usr/local/sbin/:/usr/local/lib/:/home/$USER/.local/bin
@@ -215,7 +249,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+(/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
 #cat ~/.cache/wal/sequences
@@ -228,13 +262,13 @@ source ~/.cache/wal/colors-tty.sh
 # Use emacs key bindings
 bindkey -e
 
-# [PageUp] - Up a line of history
+# [Up-Arrow] - Up a line of history
 if [[ -n "${terminfo[kcuu1]}" ]]; then
   bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-history
   bindkey -M viins "${terminfo[kcuu1]}" up-line-or-history
   bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-history
 fi
-# [PageDown] - Down a line of history
+# [Down-Arrow] - Down a line of history
 if [[ -n "${terminfo[kcud1]}" ]]; then
   bindkey -M emacs "${terminfo[kcud1]}" down-line-or-history
   bindkey -M viins "${terminfo[kcud1]}" down-line-or-history
@@ -312,3 +346,15 @@ bindkey -M vicmd '^[[1;5C' forward-word
 bindkey -M emacs '^[[1;5D' backward-word
 bindkey -M viins '^[[1;5D' backward-word
 bindkey -M vicmd '^[[1;5D' backward-word
+
+#Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+#Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
+
+source /usr/share/doc/fzf/examples/completion.zsh
+
+# Fix partial line symbol
+# https://stackoverflow.com/questions/36977990/why-zsh-adds-at-the-end-of-my-output
+export PROMPT_EOL_MARK=''
