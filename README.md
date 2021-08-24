@@ -28,7 +28,7 @@ This is **optional** but recommended.
 cd ~ && git clone https://github.com/wixnic/parrot-config.git && cd parrot-config
 ```
 
-> IMPORTANT: cd ~ (clone this in the home folder, otherwise modify the script and change some directories in the script)
+> IMPORTANT: Clone this in the home folder, otherwise modify the script and change some directories in the script,
 
 2. Run the script
 
@@ -114,10 +114,6 @@ More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 # Next Steps
 
 If you want to know how it works or if you want to configure the settings to your own liking, continue reading the next sections.
-
-## Full Screen Fix
-
-User Windows + Alt + R to fix the polybar when changing screen resolution.
 
 ## Configuration Files Locations After Installation
 
