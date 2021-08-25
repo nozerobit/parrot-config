@@ -2,6 +2,10 @@
 
 I'm fixing some stuff... don't use this. 
 
+ToDo:
+Fix pywal.sh
+Fix colors
+
 # Introduction
 
 This is my ParrotOS configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
