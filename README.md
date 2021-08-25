@@ -1,3 +1,7 @@
+# Fixing
+
+I'm fixing some stuff... don't use this. 
+
 # Introduction
 
 This is my ParrotOS configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
