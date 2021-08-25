@@ -58,8 +58,10 @@ ninja -C build
 sudo ninja -C build install
 cd ~/parrot-config
 
-# Confirm the polybar
+# Confirm the polybar (in case a mirror fails)
 sudo apt install -y polybar
+# Confirm rofi  (in case a mirror fails)
+sudo apt install -y rofi
 
 # Blue Sky Polybar Theme
 git clone https://github.com/VaughnValle/blue-sky.git
