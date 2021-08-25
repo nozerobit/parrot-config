@@ -1,7 +1,7 @@
 #!/bin/sh
 
 WAL=$(ls ~/Pictures/*.* | shuf -n 1)
-bash ~/.config/polybar/colorblocks/scripts/pywal.sh $WAL
+bash ~/.config/polybar/scripts/pywal.sh $WAL
 # Avoid the script from killing the picom process
 #if ! pgrep -x "picom" > /dev/null
 #then
