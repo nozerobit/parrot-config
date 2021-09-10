@@ -75,7 +75,7 @@ reboot
 
 Once you have rebooted the machine, select bspwm as you desktop environment, enter your credentials and then login.
 
-4. Open alacritty with Windows + Enter (if alacritty failed to compile then do * [this](#Possible-Alacritty-Error-This-may-not-apply-to-everyone).)
+4. Open alacritty with Windows + Enter (if alacritty failed to compile then do [this](#Possible-Alacritty-Error).)
 
 ![image](https://user-images.githubusercontent.com/83516002/125389017-10b49d00-e390-11eb-9365-66a040522cac.png)
 
@@ -95,7 +95,7 @@ sudo ln -s /home/wixnic/.cache/wal /root/.cache/wal
 
 That's it, now play with `Windows + Alt + W` and `Windows + Alt + B` and see which look you like the most. You **may** need to hit those keyboard shortcuts multiple times when you first install this configuration.
 
-# Possible Alacritty Error - This may not apply to everyone
+# Possible Alacritty Error
 
 If you press Windows + Enter and nothing is happening, then most likely Alacritty failed to compile but you can fix it easily by doing this:
 
