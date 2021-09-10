@@ -66,7 +66,7 @@ If you press Windows + Enter and nothing is happening, then most likely Alacritt
 
 ![image](https://user-images.githubusercontent.com/83516002/132793338-7e3140c6-bef1-4292-abb9-460e89e1f7c9.png)
 
-Open the MATE-terminal with rofi using Windows + D and search for `gnome-terminal`, press the Enter key and type this in the terminal:
+Open the MATE-terminal with rofi using Windows + D and search for `MATE-terminal`, press the Enter key and type this in the terminal:
 
 ```
 cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
