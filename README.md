@@ -72,6 +72,10 @@ Open the MATE-terminal with rofi using Windows + D and search for `gnome-termina
 cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
 ```
 
+This is the output that you should see if alacritty compiles correctly:
+
+![image](https://user-images.githubusercontent.com/83516002/132793536-3207d020-2dbd-4d8f-813f-a9fabf88ed5e.png)
+
 If it fails then you can try increasing the RAM or creating swap partition as follows:
 
 Create the swap space
