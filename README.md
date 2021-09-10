@@ -32,6 +32,8 @@ cd ~ && git clone https://github.com/wixnic/parrot-config.git && cd parrot-confi
 
 The installation can take a while because it downloads a lot of things. The time that it takes to finish will depend mostly on your internet download bandwidth provided by your ISP.
 
+![image](https://user-images.githubusercontent.com/83516002/132793893-6c7e935e-27a7-4c17-8b08-325621ee961b.png)
+
 ![image](https://user-images.githubusercontent.com/83516002/125377441-81ea5500-e37c-11eb-88ab-ff1919ec9aa1.png)
 
 When prompted here type `y` for yes. This will install node.js which is needed for the coc plugin in neovim.
@@ -42,7 +44,12 @@ When prompted here type `y` for yes. This will install node.js which is needed f
 reboot
 ```
 
+![image](https://user-images.githubusercontent.com/83516002/132793863-3fbb2e85-7f67-4058-93f7-ec30f1e36528.png)
+
+
 Once you have rebooted the machine, select bspwm as you desktop environment, enter your credentials and then login.
+
+
 
 4. Open zsh with Windows + Enter
 
