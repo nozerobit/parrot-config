@@ -73,7 +73,7 @@ ninja -C build
 sudo ninja -C build install
 
 # Display Configuration
-cd ~/kali-config
+cd ~/parrot-config
 cp .xinitrc ~/.xinitrc
 
 # Powerlevel10K
@@ -91,7 +91,7 @@ cd
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
-cd ~/kali-config
+cd ~/parrot-config
 
 # Tmux Configuration for root
 sudo cp -r /home/$USER/.tmux /root
@@ -136,24 +136,24 @@ wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
 # Install Obsidian.AppImage
-cd ~/kali-config
-wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.10/Obsidian-0.12.10.AppImage
-chmod u+x Obsidian-0.12.10.AppImage
-mkdir ~/appimages
-cp appimages/favicon-1.png ~/appimages
-cp Obsidian-0.12.10.AppImage ~/appimages
-mkdir -p ~/.local/share/applications
-cp Obsidian.desktop ~/.local/share/applications/
+#cd ~/kali-config
+#wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.10/Obsidian-0.12.10.AppImage
+#chmod u+x Obsidian-0.12.10.AppImage
+#mkdir ~/appimages
+#cp appimages/favicon-1.png ~/appimages
+#cp Obsidian-0.12.10.AppImage ~/appimages
+#mkdir -p ~/.local/share/applications
+#cp Obsidian.desktop ~/.local/share/applications/
 
 # Install Firefox Standard
-cd ~/kali-config
-sudo mkdir -p /usr/lib/firefox
-wget 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US' -O firefox.tar.bz2
-tar -xf firefox.tar.bz2
-sudo cp -r firefox/* /usr/lib/firefox
-sudo ln -s -f /usr/lib/firefox/firefox /usr/bin/firefox
-cp appimages/fire.png ~/appimages
-cp Firefox.desktop ~/.local/share/applications/
+#cd ~/kali-config
+#sudo mkdir -p /usr/lib/firefox
+#wget 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US' -O firefox.tar.bz2
+#tar -xf firefox.tar.bz2
+#sudo cp -r firefox/* /usr/lib/firefox
+#sudo ln -s -f /usr/lib/firefox/firefox /usr/bin/firefox
+#cp appimages/fire.png ~/appimages
+#cp Firefox.desktop ~/.local/share/applications/
 
 # Install Sublime Text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -162,10 +162,10 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update && sudo apt-get install sublime-text -y
 
 # Copy the Wallpapers to ~/Pictures
-cp ~/kali-config/wallpapers/* ~/Pictures
+cp ~/parrot-config/wallpapers/* ~/Pictures
 
 # Copy the Configuration Files
-cp -r ~/kali-config/.config ~/
+cp -r ~/parrot-config/.config ~/
 
 # Execute Permissions
 GRP=$(id -gn $USER)
@@ -173,13 +173,13 @@ chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/bspwm/bspwm_resize
 chmod +x ~/.config/scripts/*.sh
 chmod -R 755 ~/.config/polybar
-sudo cp ~/kali-config/scripts/changer /usr/local/bin/changer
+sudo cp ~/parrot-config/scripts/changer /usr/local/bin/changer
 sudo chown $USER:$GRP /usr/local/bin/changer
 sudo chmod +x /usr/local/bin/changer
-sudo cp ~/kali-config/scripts/whichSystem /usr/local/bin/whichSystem
+sudo cp ~/parrot-config/scripts/whichSystem /usr/local/bin/whichSystem
 sudo chown $USER:$GRP /usr/local/bin/whichSystem
 sudo chmod +x /usr/local/bin/whichSystem
-sudo cp ~/kali-config/scripts/border_rounded_or_sharp /usr/local/bin/border_rounded_or_sharp
+sudo cp ~/parrot-config/scripts/border_rounded_or_sharp /usr/local/bin/border_rounded_or_sharp
 sudo chown $USER:$GRP /usr/local/bin/border_rounded_or_sharp
 sudo chmod +x /usr/local/bin/border_rounded_or_sharp
 
@@ -201,7 +201,7 @@ sudo cp xeventbind /usr/local/bin
 cd ..
 
 # feh
-cp ~/kali-config/.fehbg ~/
+cp ~/parrot-config/.fehbg ~/
 
 # Allow Low-Priv Users to Capture Packets (this is because of rofi)
 sudo dpkg-reconfigure wireshark-common
