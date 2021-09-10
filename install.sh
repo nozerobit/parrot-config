@@ -131,6 +131,10 @@ cd ~
 wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
+# Install Obsidian Debian Package
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.15/obsidian_0.12.15_amd64.deb
+sudo dpkg -i obsidian_0.12.15_amd64.deb
+
 # Install Obsidian.AppImage
 #cd ~/kali-config
 #wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.10/Obsidian-0.12.10.AppImage
