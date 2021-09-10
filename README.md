@@ -8,6 +8,33 @@ Tested in:
 ISO Name:
 Parrot-security-4.11.2_amd64.iso
 
+Don't forget to give me a ⭐ to motivate me to continue adding cool features this configuration.
+
+# Relevant Content
+
+* [Cool Features](#Cool-Features)
+* [Installation](#Installation)
+* [Configuration Files](#Configuration-Files)
+* [BSPWM Mouse](#BSPWM-Mouse)
+* [Keyboard Shortcuts](#Keyboard-Shortcuts)
+* [Neovim](#Neovim)
+
+# Cool Features
+
+- Normally you would use Windows + Alt + R to reload bspwn in order to fix the wallpaper and the polybar when changing screen resolution but I have made a ~~script~~ with xeventbind and a polybar configuration so that you don't have to reload bspwm. In other words, it automatically changes the wallpaper and the polybar resolution/size when changing the screen resolution **without** the need to reload bspwm.
+
+- You can use `Windows + Alt + W` to shuffle wallpapers and change colors on the fly.
+
+- You can change the **corners** of the windows and the polybar to **rounded or sharp** corners with `Windows +  Alt + B`.
+
+- You can also **copy IPs** to the clipboard with a **left click** on the bar (ethernet, vpn or target).
+
+- There's a VPN status bar, it shows your VPN IP when connected and it tells you when you're disconnected from a VPN.
+
+- There's a network bar where you can configure your network.
+
+- On zsh you can set the target IP with the command `settarget 10.10.10.10`. You can use the command `cleartarget` to clear the target IP.
+
 # Installation
 
 I recommend having 4 GB of RAM or more because alacritty takes quite an amount of memory when compiling/building it. I installed this from the home folder at `~/parrot-config` location.
@@ -105,7 +132,7 @@ Now try to compile alacritty again.
 
 More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 
-## Configuration Files Locations After Installation
+## Configuration Files
 
 If you which to change some settings, here are the locations of the configuration files.
 
@@ -157,7 +184,13 @@ If you which to change some settings, here are the locations of the configuratio
 ~/.zshrc
 ```
 
-## sxhkd shortcuts
+## BSPWM Mouse
+
+Alt + Left Click move a floating window or swap a tiled window.
+
+Alt + Right Click resize any tiling or floating window.
+
+## Keyboard Shortcuts
 
 Windows + Enter : Open the terminal-emulator (alacritty).
 
@@ -247,12 +280,6 @@ nvim
 :Lines
 ```
 
-## nvim health check
-
-![nvim checkhealth](media/nvim-checkhealth.png)
-
-In nvim you can perform a health check if there are any errors with some plugins.
-
 # Neovim Shortcuts
 ```vim
 " Navigation
@@ -315,6 +342,69 @@ Check out this wiki: https://github.com/neoclide/coc.nvim/wiki/Using-the-configu
 # Errors
 
 If you're getting errors with compiling alacritty then increase the RAM or create a swap partition.
+
+# Configuring the Polybar and Alacritty
+
+## Bottom or Top?
+
+If you want the polybar at the top or bottom, modify the `~/.config/polybar/colorblocks/config.ini`:
+```
+; Put the bar at the bottom of the screen
+bottom = true
+
+; Put the bar at the top of the screen
+bottom = false
+```
+
+## Borders or No Borders?
+
+If you want to increase or remove the border width of every window, modify the `~/.config/bspwm/bspwmrc`:
+```
+# On
+bspc config border_width 1
+
+# Off
+bspc config border_width 0
+```
+
+## Rounded Corners
+
+### Polybar
+
+Polybar rounded corners or not, modify the `.ini` files that have the radius variable set:
+```
+; rounded corners
+radius = 15.0
+
+
+; no rounded corners
+radius = 0
+```
+
+### Compton/Picom
+
+If you want to exclude some windows from having rounded corners, modify the `~/.config/compton/compton.conf` file or `~/.config/picom/picom.conf` file:
+```
+; rounded corners
+corner-radius = 15.0;
+
+; no rounded corners
+corner-radius = 0.0;
+
+; exclude specific programs/apps:
+rounded-corners-exclude = [
+  #"window_type = 'normal'",
+  #"class_g = 'rofi'",
+  #"class_g = 'XTerm'",
+  #"class_g = 'Polybar'",
+  #"class_g = 'code-oss'",
+  #"class_g = 'TelegramDesktop'",
+  "class_g = 'firefox'"
+  #"class_g = 'Thunderbird'
+];
+```
+
+This will apply to terminal emulators, rofi and others.
 
 # References
 
