@@ -64,16 +64,15 @@ sudo ln -s /home/wixnic/.cache/wal /root/.cache/wal
 
 If you press Windows + Enter and nothing is happening, then most likely Alacritty failed to compile but you can fix it easily by doing this:
 
-![image](https://user-images.githubusercontent.com/83516002/125389659-18c10c80-e391-11eb-8f07-4167838aa91f.png)
+![image](https://user-images.githubusercontent.com/83516002/132793338-7e3140c6-bef1-4292-abb9-460e89e1f7c9.png)
 
-Open the gnome-terminal with rofi using Windows + D and search for `gnome-terminal`, press the Enter key and type this in the terminal:
+Open the MATE-terminal with rofi using Windows + D and search for `gnome-terminal`, press the Enter key and type this in the terminal:
 
 ```
 cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
 ```
 
 If it fails then you can try increasing the RAM or creating swap partition as follows:
-
 
 Create the swap space
 ```
