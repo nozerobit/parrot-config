@@ -1,11 +1,13 @@
 #!/bin/sh
 
 WAL=$(ls ~/Pictures/*.* | shuf -n 1)
-bash ~/.config/polybar/scripts/pywal.sh $WAL
-# Avoid the script from killing the picom process
-#if ! pgrep -x "picom" > /dev/null
-#then
-#    picom &
-#fi
+bash ~/.config/polybar/colorblocks/scripts/pywal.sh $WAL
 
-compton --config ~/.config/compton/compton.conf &
+# Picom Configuration
+if ! pgrep -x "picom" > /dev/null
+then
+    picom --config ~/.config/picom/picom.conf &
+fi
+
+# Compton Configuration
+#compton --config ~/.config/compton/compton.conf &
