@@ -42,20 +42,16 @@ rm *.zip
 sudo apt install meson -y
 
 # Create swap
-dd if=/dev/zero of=/mnt/swapfile bs=4096 count=2097152
-chmod 600 /mnt/swapfile
-mkswap /mnt/swapfile
-swapon /mnt/swapfile
+#dd if=/dev/zero of=/mnt/swapfile bs=4096 count=2097152
+#chmod 600 /mnt/swapfile
+#mkswap /mnt/swapfile
+#swapon /mnt/swapfile
 
 # Alacritty
 git clone https://github.com/jwilm/alacritty
 cd alacritty
 cargo build --release && sudo cp target/release/alacritty /usr/local/bin
 cd ..
-
-# In case that alacritty fails, try to compile it again
-cd ~/parrot-config/alacritty && cargo build --release && sudo cp target/release/alacritty /usr/local/bin
-
 
 # bspwm and sxhkd
 git clone https://github.com/baskerville/bspwm.git
