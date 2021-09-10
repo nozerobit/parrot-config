@@ -73,16 +73,13 @@ reboot
 
 ![image](https://user-images.githubusercontent.com/83516002/132793863-3fbb2e85-7f67-4058-93f7-ec30f1e36528.png)
 
-
 Once you have rebooted the machine, select bspwm as you desktop environment, enter your credentials and then login.
 
-
-
-4. Open zsh with Windows + Enter
+4. Open alacritty with Windows + Enter (if alacritty failed to compile then do * [this](#Possible-Alacritty-Error-This-may-not-apply-to-everyone).)
 
 ![image](https://user-images.githubusercontent.com/83516002/125389017-10b49d00-e390-11eb-9365-66a040522cac.png)
 
-Wait for powerlevel10K, this is done very quickly.
+5. Run `sudo su` to use the root user.
 
 ![image](https://user-images.githubusercontent.com/83516002/125377681-f1604480-e37c-11eb-90a2-04cb418a9c7a.png)
 
@@ -93,6 +90,10 @@ After generating wal cache files, create a Symlink to the root directory for the
 ```
 sudo ln -s /home/wixnic/.cache/wal /root/.cache/wal
 ```
+
+6. Install [Neovim](#Neovim) plugins.
+
+That's it, now play with `Windows + Alt + W` and `Windows + Alt + B` and see which look you like the most. You **may** need to hit those keyboard shortcuts multiple times when you first install this configuration.
 
 # Possible Alacritty Error - This may not apply to everyone
 
@@ -116,18 +117,22 @@ Create the swap space
 ```
 dd if=/dev/zero of=/mnt/swapfile bs=4096 count=2097152
 ```
+
 Assign the right permissions.
 ```
 chmod 600 /mnt/swapfile
 ```
+
 After defining our partition, we need to format it for "swap mode" so run mkswap command on the newly created swap partition. Make sure to choose the correct partition number which you need to enable swap.
 ```
 mkswap /mnt/swapfile
 ```
+
 Enable swap 
 ```
 swapon /mnt/swapfile
 ```
+
 Now try to compile alacritty again.
 
 More info here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
