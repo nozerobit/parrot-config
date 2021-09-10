@@ -193,7 +193,7 @@ sudo ln -s -f ~/.zshrc /root/.zshrc
 sudo ln /usr/bin/nvim /usr/bin/vim -sf
 
 # xeventbind (Used for resolutions and reloading feh and wal)
-cd ~/kali-config
+cd ~/parrot-config
 git clone https://github.com/ritave/xeventbind.git
 cd xeventbind
 make
