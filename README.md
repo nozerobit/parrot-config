@@ -42,9 +42,7 @@ When prompted here type `y` for yes. This will install node.js which is needed f
 reboot
 ```
 
-![image](https://user-images.githubusercontent.com/83516002/125377817-279dc400-e37d-11eb-9769-31cf3aaa5588.png)
-
-Once you have rebooted the machine, enter your credentials and then login.
+Once you have rebooted the machine, select bspwm as you desktop environment and enter your credentials and then login.
 
 4. Open zsh with Windows + Enter
 
