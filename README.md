@@ -1,26 +1,12 @@
-# Fixing
-
-I'm fixing some stuff... don't use this. 
-
-ToDo:
-Fix pywal.sh
-Fix colors
-
 # Introduction
 
 This is my ParrotOS configuration. I have decided to publish it for everyone out there, feel free to use it and optimize it to your liking. :)
 
 Tested in:
-`ParrotOS 4.11.2 MATE Security Edition` with **4 GB** of RAM and **40 GB** of Disk Space.
+`ParrotOS 4.11.2 MATE Security Edition` with **4 GB** of RAM and **60 GB** of Storage Space.
 
 ISO Name:
 Parrot-security-4.11.2_amd64.iso
-
-# Overview
-
-https://user-images.githubusercontent.com/83516002/125391826-a3efd180-e394-11eb-87ca-02253bc0cf6b.mp4
-
-This is the outcome of my dotfiles configuration. 
 
 # Installation
 
@@ -45,14 +31,6 @@ cd ~ && git clone https://github.com/wixnic/parrot-config.git && cd parrot-confi
 ```
 
 The installation can take a while because it downloads a lot of things. The time that it takes to finish will depend mostly on your internet download bandwidth provided by your ISP.
-
-![image](https://user-images.githubusercontent.com/83516002/125388435-004ff280-e38f-11eb-92a9-4d7c0fe9bf01.png)
-
-![image](https://user-images.githubusercontent.com/83516002/125376924-89f5c500-e37b-11eb-878b-894d2c79b80f.png)
-
-![image](https://user-images.githubusercontent.com/83516002/125388480-13fb5900-e38f-11eb-98d5-1ecc5b0e645f.png)
-
-Choose slim as the default login manager.
 
 ![image](https://user-images.githubusercontent.com/83516002/125377441-81ea5500-e37c-11eb-88ab-ff1919ec9aa1.png)
 
@@ -210,24 +188,6 @@ Windows + Ctrl + Space: Undo the preselection.
 Windows + Alt + W: Shuffle through wallpapers with pywal (This will change all the colors according to the wallpaper). ✨
 
 Print: Take a screenshot with `flameshot`.
-
-## lxappearance | Customize Look and Feel
-
-Launch `lxappearance` a.k.a Customize Look and Feel with rofi (Windows + D).
-
-![lxappearance theme](media/lxappearance-widget.png)
-
-Change the theme to `Arc-Dark`.
-
-![lxapperance icon](media/lxappearance-icontheme.png)
-
-Change the icon to `Papirus-Dark`.
-
-## Ristretto Image Viewer
-
-![Ristretto](media/pictures.png)
-
-Open the `Thunar File Manager` which you can launch with `rofi`, the shortcut for rofi is `Windows + D`, once you are in Thunar, navigate to the Pictures directory. Right click on a picture, a nice comfortable image viewer is  `ristretto`, which I recommend using.
 
 # Picom Configuration
 
