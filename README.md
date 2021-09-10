@@ -75,7 +75,7 @@ reboot
 
 Once you have rebooted the machine, select bspwm as you desktop environment, enter your credentials and then login.
 
-4. Open alacritty with Windows + Enter (if alacritty failed to compile then do [this](#Possible-Alacritty-Error).)
+4. Open alacritty with Windows + Enter (if alacritty failed to compile, in other words if alacritty doesn't open or appear when you press Windows + Enter then do [this](#Possible-Alacritty-Error).)
 
 ![image](https://user-images.githubusercontent.com/83516002/125389017-10b49d00-e390-11eb-9365-66a040522cac.png)
 
