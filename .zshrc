@@ -150,7 +150,7 @@ fi
 
 # Functions
 function mk(){
-    mkdir {scans,loot,exploits,scripts,report}
+    mkdir {scans,content,loot,exploits,scripts,report}
 }
 
 function drive(){
