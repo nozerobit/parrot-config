@@ -51,3 +51,4 @@ bspc rule -a Alacritty state=tiled focus=on
 bspc rule -a speedcrunch state=floating focus=on
 bspc rule -a Viewnior focus=on state=tiled
 bspc rule -a Emacs state=tiled focus=on
+bspc rule -a Firefox state=tiled focus=on
