@@ -33,7 +33,7 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias cat='bat'
+alias cat='/usr/bin/bat'
 alias catn='/usr/bin/cat'
 #####################################################
 # Auto completion / suggestion
@@ -187,13 +187,25 @@ function kp() {
     return;
 }
 
-# Extract nmap information
+# Extract Nmap Ports
 function xp(){
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)"
-    echo -e "[+] Open ports: $ports"  >> xp.tmp
-    echo $ports | tr -d '\n' | xclip -sel clip
-    echo -e "[+] Ports copied to clipboard"  >> xp.tmp
+    echo "[+] Open ports: $ports"  >> xp.tmp
+    printf $ports | xclip -sel clip
+    echo "[+] Ports copied to clipboard"  >> xp.tmp
     cat xp.tmp; rm xp.tmp
+}
+
+# OS Identifier
+function os() {
+    ttl="$(ping -c 1 $1 | awk -F 'ttl=' '{print $2}' | cut -d ' '  -f 1 | tr -d '\n')"
+    if (( $ttl <= 64 )); then
+        echo 'OS: Unix/Linux'
+    elif (( $ttl <= 128 )); then
+        echo 'OS: Windows'
+    else
+        echo 'OS: Not detected'
+    fi
 }
 
 
