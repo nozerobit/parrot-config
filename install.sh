@@ -100,6 +100,12 @@ pip3 install --user --upgrade pynvim
 pip3 install ueberzug
 pip3 install pwntools
 
+# pipx and crackmapexec
+sudo apt-get install python3-venv
+python3 -m pip install --user pipx
+pipx ensurepath
+sudo apt purge cme && pipx install crackmapexec --force
+
 # Install lsd and bat
 wget "https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
 sudo dpkg -i "lsd_0.20.1_amd64.deb"
