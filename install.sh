@@ -182,6 +182,9 @@ chmod -R 755 ~/.config/polybar
 sudo cp ~/parrot-config/scripts/changer /usr/local/bin/changer
 sudo chown $USER:$GRP /usr/local/bin/changer
 sudo chmod +x /usr/local/bin/changer
+sudo cp ~/parrot-config/scripts/font_alacritty /usr/local/bin/font_alacritty
+sudo chown $USER:$GRP /usr/local/bin/font_alacritty
+sudo chmod +x /usr/local/bin/font_alacritty
 sudo cp ~/parrot-config/scripts/whichSystem /usr/local/bin/whichSystem
 sudo chown $USER:$GRP /usr/local/bin/whichSystem
 sudo chmod +x /usr/local/bin/whichSystem
